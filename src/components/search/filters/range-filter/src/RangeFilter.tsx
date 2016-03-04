@@ -1,5 +1,8 @@
 import * as React from "react";
+
 const Rcslider = require("rc-slider")
+const Select2 = require("react-select2-wrapper")
+
 
 import {
 	SearchkitManager,
@@ -99,7 +102,7 @@ export class RangeFilter extends SearchkitComponent<RangeFilterProps, any> {
 		})
 
 		return (
-			<div className="bar-chart">
+			<div className="bar-chart">sssssss
 				{bars}
 			</div>
 		)
@@ -118,8 +121,8 @@ export class RangeFilter extends SearchkitComponent<RangeFilterProps, any> {
 
 		return (
 			<div className={classname}>
-				<div className={block("header")}>{this.translate(this.props.title)}</div>
-				{histogram}
+				<div className={block("header")}>{this.translate(this.props.title)} ssssssssssssssss</div>
+				
         <Rcslider
           min={this.props.min}
           max={this.props.max}
@@ -130,6 +133,18 @@ export class RangeFilter extends SearchkitComponent<RangeFilterProps, any> {
 					]}
 					onChange={this.sliderUpdate}
           onAfterChange={this.sliderUpdateAndSearch}/>
+
+
+<Select2
+  multiple
+  data={['bug', 'feature', 'documents', 'discussion']}
+  options={
+    {
+      placeholder: 'search by tags',
+    }
+  }
+/>
+
 					<div className={block("x-label").mix(this.bemBlocks.labels())}>
 						<div className={this.bemBlocks.labels("min")}>{this.props.min}</div>
 						<div className={this.bemBlocks.labels("max")}>{this.props.max}</div>
